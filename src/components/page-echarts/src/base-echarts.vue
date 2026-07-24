@@ -1,12 +1,30 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onBeforeMount, watchEffect } from 'vue'
 import * as echarts from 'echarts';
 const echartsRef = ref<HTMLElement | null>(null)
+
+const { configOptions } = defineProps<{
+  configOptions: any
+}>()
+
+let myChart: echarts.ECharts | null = null;
+function resize() {
+  myChart?.resize()
+}
 onMounted(() => {
-  const myChart = echarts.init(echartsRef.value!, 'light', {
+  myChart = echarts.init(echartsRef.value!, 'light', {
     renderer: 'canvas'
   });
-  myChart.setOption({})
+  watchEffect(() => {
+    myChart?.setOption(configOptions);
+  })
+
+  window.addEventListener('resize', resize);
+})
+
+onBeforeMount(() => {
+  myChart?.dispose();
+  window.removeEventListener('resize', resize);
 })
 </script>
 
@@ -17,5 +35,7 @@ onMounted(() => {
 </template>
 
 <style lang="less" scoped>
-.base-echarts {}
+.base-echarts {
+  height: 200px;
+}
 </style>

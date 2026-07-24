@@ -2,6 +2,7 @@
 import { storeToRefs } from 'pinia';
 import useDashboardStore from '@/store/main/analysis/dashboard';
 import CountUp from './c-cnps/count-up.vue';
+import { LineEcharts } from '@/components/page-echarts'
 
 const dashboardStore = useDashboardStore();
 dashboardStore.fetchAmountListData();
@@ -31,6 +32,18 @@ console.log("amountListData: ", amountListData.value);
         </el-col>
 
       </template>
+    </el-row>
+
+    <el-row :gutter="10">
+      <el-col :span="8">
+        <line-echarts></line-echarts>
+      </el-col>
+      <el-col :span="8">
+        <line-echarts></line-echarts>
+      </el-col>
+      <el-col :span="8">
+        <line-echarts></line-echarts>
+      </el-col>
     </el-row>
   </div>
 </template>
