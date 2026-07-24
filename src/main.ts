@@ -1,0 +1,14 @@
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
+import registryStore from './store';
+import 'normalize.css/normalize.css';
+import '@/assets/css/index.css';
+import registerIcons from '@/global/register-icons';
+import SvgIcon from '@/components/icon/svg-icon.vue';
+const app = createApp(App);
+app.use(registryStore);
+app.use(router);
+app.use(registerIcons);
+app.component('SvgIcon', SvgIcon);
+app.mount('#app');

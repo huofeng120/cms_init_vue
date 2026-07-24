@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+/* 如果你有自定义主题，也写在这里 */
+
+@theme {
+	--color-nav: var(--menu-bg-color);
+	--color-header: var(--header-bg-color);
+	--color-main: var(--main-bg-color);
+}
+
+@utility scrollbar-hide {
+	scrollbar-width: none;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}

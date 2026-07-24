@@ -1,0 +1,66 @@
+{
+	"compilerOptions": {
+		// 编译出js的目标ES版本
+		"target": "esnext",
+		// 使用的ES版本
+		"module": "esnext",
+		// 是否允许编译js文件
+		"allowJs": false,
+
+		// 用于显示模块解析策略，有node和classic两种
+		// "moduleResolution": "node" 弃用
+
+		// 开启严格模式
+		"strict": true,
+
+		// 强制代码中使用的模块名必须与文件系统中的文件名大小写保持一致
+		"forceConsistentCasingInFileNames": true,
+
+		// 允许使用xxx 代替 * as xxx 导入
+		"allowSyntheticDefaultImports": true,
+
+		// 指定jsx代码的生成，
+		"jsx": "preserve",
+
+		// 编译时是否生成map文件
+		"sourceMap": true,
+
+		// 通过导入内容生成命名空间，实现commonJS和ES模块之间的兼容
+		"esModuleInterop": true,
+
+		// 是否可以导入json文件
+		"resolveJsonModule": true,
+
+		// 是否检测定义了但是没有使用的变量、函数等
+		"noUnusedLocals": true,
+
+		// 是否检测在函数体中定义了,但是没有使用的参数
+		"noUnusedParameters": true,
+
+		// 是否启用实验性的装饰器特性
+		"experimentalDecorators": true,
+
+		// ts 中可以使用的库
+		"lib": ["dom", "esnext"],
+		"rootDir": ".",
+		// 编译后的文件目录
+		"outDir": "./dist",
+
+		// 不允许变量或函数具有隐式any类型
+		"noImplicitAny": false,
+
+		// 弃用阻止对下载库的类型检测
+		"skipLibCheck": true,
+
+		// 指定要包含在编译中的库文件
+		"types": ["vite/client", "element-plus/global", "@types/node"],
+
+		// 是否移除注释
+		"removeComments": true,
+		"paths": {
+			"@/*": ["./src/*"]
+		}
+	},
+	// 指定需要编译的文件
+	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue", "src/**/*.tsx"]
+}

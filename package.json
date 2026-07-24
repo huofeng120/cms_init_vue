@@ -1,0 +1,81 @@
+{
+	"name": "common_vue_template",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"lint:lint-staged": "lint-staged",
+		"prepare": "husky",
+		"dev": "vite --mode dev",
+		"mock": "vite --mode mock",
+		"build": "vite build --mode prod",
+		"build:analyze": "vite build --mode analyze",
+		"serve": "vite preview",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"lint:eslint": "eslint --cache --max-warnings 0 {src,mock}/**/*.(vue,ts,tsx) --fix",
+		"lint:prettier": "prettier --write --cache **/*.{vue,ts,tsx,js,jsx,json,md}"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"packageManager": "pnpm@10.20.0",
+	"dependencies": {
+		"@element-plus/icons-vue": "^2.3.2",
+		"axios": "^1.18.0",
+		"countup.js": "^2.10.1",
+		"dayjs": "^1.11.21",
+		"echarts": "^6.1.0",
+		"element-plus": "^2.14.2",
+		"normalize.css": "^8.0.1",
+		"nprogress": "^0.2.0",
+		"pinia": "^3.0.4",
+		"pinia-plugin-persistedstate": "^4.7.1",
+		"vue": "^3.5.38",
+		"vue-router": "^5.1.0"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^21.0.2",
+		"@commitlint/config-conventional": "^21.0.2",
+		"@eslint/create-config": "^2.0.0",
+		"@eslint/js": "^10.0.1",
+		"@nabla/vite-plugin-eslint": "^3.0.1",
+		"@tailwindcss/cli": "^4.3.3",
+		"@tailwindcss/vite": "^4.3.3",
+		"@types/node": "^26.0.0",
+		"@types/nprogress": "^0.2.3",
+		"@vitejs/plugin-vue": "^6.0.7",
+		"@vitejs/plugin-vue-jsx": "^5.1.5",
+		"eslint": "^10.5.0",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-prettier": "^5.5.6",
+		"eslint-plugin-vue": "^10.9.2",
+		"globals": "^17.6.0",
+		"husky": "^9.1.7",
+		"less": "^4.6.6",
+		"lint-staged": "^17.0.7",
+		"prettier": "^3.8.4",
+		"rollup-plugin-visualizer": "^7.0.1",
+		"sass-embedded": "^1.100.0",
+		"tailwindcss": "^4.3.3",
+		"typescript": "^6.0.3",
+		"typescript-eslint": "^8.61.1",
+		"unplugin-auto-import": "^21.0.0",
+		"unplugin-element-plus": "^0.11.2",
+		"unplugin-icons": "^23.0.1",
+		"unplugin-vue-components": "^32.1.0",
+		"vite": "^8.0.16",
+		"vite-plugin-compression": "^0.5.1",
+		"vite-plugin-eslint": "^1.8.1",
+		"vue-tsc": "^3.3.5"
+	},
+	"lint-staged": {
+		"*.{js,ts,vue}": [
+			"eslint --fix",
+			"prettier --write"
+		],
+		"*.{json,md,css,scss}": [
+			"prettier --write"
+		]
+	}
+}
